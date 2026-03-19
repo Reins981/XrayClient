@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TestSpec>
+        <TestClass type="default" id="suites.Power/BK178x_12V/test_uds.ReadDataByIdentifier/IdentData">
+            <TestDesc>
+                <Title>Read data by UDS service ReadDataByIdentifier</Title>
+                <Themes>Diag</Themes>
+                <Purpose>DUT has to support UDS service ReadDataByIdentifier.\n This test verifies data payload transmitted by DUT only\n when the parameter 'ExpectedData' is defined. In case\n 'ExpectedData' is None it verifies correct response only.\n If the parameter 'ExpectedLength' is defined, the length of\n data payload will be checked. In addition to it the test\n verifies negative response depend on 'ExpectedNRC'.</Purpose>
+                <TestInit>$[DELAY_SEC]: 1 \n$[VOLTAGE]: 12 \n$[CURRENT]: 5 \n\n- Wait until DUT reaches Nm state 'NormalOperation'</TestInit>
+                <TestRun>- Ensure DUT is in expected diagnostic session.\n - Send ReadDataByIdentifier request with given 'DID'.\n - Receive response transmitted by DUT.\n - Verify NRC in case negative response is expected.\n - Verify response data in case positive response is\n expected.</TestRun>
+                <TestExpect>- DUT sends expected response for diagnostic request.\n - If positive response expected, DUT sends requested data\n in response payload. Received data matches with\n 'ExpectedData'.\n - If NRC expected DUT respond with 'ExpectedNRC'</TestExpect>
+                <TestCheck>None</TestCheck>
+                <TestReset>None</TestReset>
+            </TestDesc>
+            <Params>
+                <Data param="OutputFile">output\\identdata.log</Data>
+            </Params>
+            <TestCases>
+                <Test id="0xF187_VWSparePartNumber">
+                    <Params>
+                        <Data param="Label">VWSparePartNumber</Data>
+                        <Data param="DID">0xF187</Data>
+                        <Data param="ExpectedData">"1AB123456AB"</Data>
+                        <Data param="DataType">ASCII</Data>
+                    </Params>
+                </Test>
+            </TestCases>
+        </TestClass>
+    </TestSpec>

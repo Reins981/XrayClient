@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<para>
+  <section>
+    <title>Read data by UDS service ReadDataByIdentifier</title>
+    <para>Test Class ID: suites.Power/BK178x_12V/test_uds.ReadDataByIdentifier/IdentData</para>
+    <table>
+      <title>Description of Read data by UDS service ReadDataByIdentifier test</title>
+      <tgroup cols="1">
+        <colspec colname="col1" colnum="1" colwidth="*"/>
+        <thead>
+          <row>
+            <?dbfo bgcolor="#ddeeee"?>
+            <entry align="center">Test Class</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <para>
+                DUT has to support UDS service ReadDataByIdentifier. This test verifies data payload transmitted by DUT only when the parameter 
+                <emphasis>ExpectedData</emphasis>
+                 is defined. In case 
+                <emphasis>ExpectedData</emphasis>
+                 is None it verifies correct response only. If the parameter 
+                <emphasis>ExpectedLength</emphasis>
+                 is defined, the length of data payload will be checked. In addition to it the test verifies negative response depend on 
+                <emphasis>ExpectedNRC</emphasis>
+                .
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entrytbl cols="2">
+              <colspec colname="col1" colnum="1" colwidth="*"/>
+              <colspec colname="col2" colnum="2" colwidth="*"/>
+              <thead>
+                <row>
+                  <entry>Test Run</entry>
+                  <entry>Test Expect</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>
+                    <para/>
+                    <itemizedlist>
+                      <listitem>Ensure DUT is in expected diagnostic session.</listitem>
+                      <listitem>
+                        Send ReadDataByIdentifier request with given 
+                        <emphasis>DID</emphasis>
+                        .
+                      </listitem>
+                      <listitem>Receive response transmitted by DUT.</listitem>
+                      <listitem>Verify NRC in case negative response is expected.</listitem>
+                      <listitem>Verify response data in case positive response is expected.</listitem>
+                    </itemizedlist>
+                  </entry>
+                  <entry>
+                    <para/>
+                    <itemizedlist>
+                      <listitem>DUT sends expected response for diagnostic request.</listitem>
+                      <listitem>
+                        If positive response expected, DUT sends requested data in response payload. Received data matches with 
+                        <emphasis>ExpectedData</emphasis>
+                        .
+                      </listitem>
+                      <listitem>
+                        If NRC expected DUT respond with 
+                        <emphasis>ExpectedNRC</emphasis>
+                        
+                      </listitem>
+                    </itemizedlist>
+                  </entry>
+                </row>
+              </tbody>
+            </entrytbl>
+          </row>
+          <row>
+            <?dbfo bgcolor="#cccccc"?>
+            <entry align="center" nameend="col2" namest="col1">Common Test Data</entry>
+          </row>
+          <row>
+            <entrytbl cols="2">
+              <colspec colname="col1" colnum="1" colwidth="12em"/>
+              <colspec colname="col2" colnum="2" colwidth="*"/>
+              <thead>
+                <row>
+                  <entry>Class Parameter</entry>
+                  <entry>Value</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>OutputFile</entry>
+                  <entry>output\\identdata.log</entry>
+                </row>
+              </tbody>
+            </entrytbl>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="suites.Power/BK178x_12V/test_uds.ReadDataByIdentifier/IdentData/0xF187_VWSparePartNumber">
+      <title>Test Case parameters for test ID 0xF187_VWSparePartNumber</title>
+      <tgroup cols="3">
+        <colspec colname="col1" colnum="1" colwidth="12em"/>
+        <colspec colname="col2" colnum="2" colwidth="*"/>
+        <colspec colname="col3" colnum="3" colwidth="8em"/>
+        <thead>
+          <row>
+            <?dbfo bgcolor="#cccccc"?>
+            <entry nameend="col2" namest="col1">
+              Test ID:
+              <emphasis>0xF187_VWSparePartNumber</emphasis>
+            </entry>
+            <entry>
+              successful
+              <?dbfo bgcolor="#00ff00"?>
+            </entry>
+          </row>
+          <row>
+            <entry>Test Parameter</entry>
+            <entry nameend="col3" namest="col2">Value</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Label</entry>
+            <entry nameend="col3" namest="col2">VWSparePartNumber</entry>
+          </row>
+          <row>
+            <entry>DID</entry>
+            <entry nameend="col3" namest="col2">0xF187</entry>
+          </row>
+          <row>
+            <entry>ExpectedData</entry>
+            <entry nameend="col3" namest="col2">&quot;1AB123456AB&quot;</entry>
+          </row>
+          <row>
+            <entry>DataType</entry>
+            <entry nameend="col3" namest="col2">ASCII</entry>
+          </row>
+          <row>
+            <?dbfo bgcolor="#cccccc"?>
+            <entry align="center" nameend="col3" namest="col1">Test Metadata</entry>
+          </row>
+          <row>
+            <entry>Requirements</entry>
+            <entry nameend="col3" namest="col2">None</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+</para>

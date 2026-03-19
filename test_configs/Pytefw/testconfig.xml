@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TestSuites>
+    <TestSuite class="suites.Void" uniqueSuffix="">
+        <TestClass class="test_example.CompareNumerals" uniqueSuffix="">
+            <ClassData>
+                <Data name="themes">Examples</Data>
+            </ClassData>
+            <ClassVariable />
+            <TestCases>
+                <TestCase id="00001" name="Compare 1 and 1">
+                    <Data param="Parameter1">1</Data>
+                    <Data param="Parameter2">1</Data>
+                    <Requirements />
+                </TestCase>
+            </TestCases>
+        </TestClass>
+    </TestSuite>
+</TestSuites>

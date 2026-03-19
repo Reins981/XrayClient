@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TestSpec>
+        <TestClass type="default" id="suites.Void/test_example.CompareNumerals">
+            <TestDesc>
+                <Title>Compare two numerals</Title>
+                <Themes>Examples</Themes>
+                <Purpose>Plain example for a test implementation.</Purpose>
+                <TestInit>- Get test parameters</TestInit>
+                <TestRun>- Compare values of given test parameters</TestRun>
+                <TestExpect>- Parameter values are equal</TestExpect>
+                <TestCheck>None</TestCheck>
+                <TestReset></TestReset>
+            </TestDesc>
+            <Params/>
+            <TestCases>
+                <Test id="00001">
+                    <Params>
+                        <Data param="Parameter1">1</Data>
+                        <Data param="Parameter2">1</Data>
+                    </Params>
+                </Test>
+            </TestCases>
+        </TestClass>
+    </TestSpec>

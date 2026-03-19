@@ -1,0 +1,15 @@
+<EcuTest>
+        <MasterData>
+            <Ecu ecu="" hw="1.0" sw="1.0" />
+            <TestDate date="2019-03-26 at 18:42" />
+            <Project>Example Test Project</Project>
+            <Tester>alpi8742</Tester>
+        </MasterData>
+        <TestClass id="suites.Power/BK178x_12V/test_uds.ReadDataByIdentifier/IdentData">
+            <TestCases>
+                <Test id="0xF187_VWSparePartNumber">
+                    <Result result="successful" />
+                </Test>
+            </TestCases>
+        </TestClass>
+</EcuTest>

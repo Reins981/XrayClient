@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TestSuites>
+    <TestSuite class="suites.Power" testtype="QuickTest" uniqueSuffix="BK178x_12V">
+        <Data param="current">5</Data>
+        <Data param="voltage">12</Data>
+        <Data param="delay_sec">1</Data>
+		<TestClass class="test_uds.ReadDataByIdentifier" testtype="QuickTest ManualTest" uniqueSuffix="IdentData">
+			<ClassData>
+				<Data name="themes">Diag</Data>
+			</ClassData>
+			<ClassVariable>
+				<Data param="OutputFile">output\\identdata.log</Data>
+			</ClassVariable>
+			<TestCases>
+				<TestCase id="0xF187_VWSparePartNumber">
+					<Data param="Label">VWSparePartNumber</Data>
+					<Data param="DID">0xF187</Data>
+					<Data param="ExpectedData">"1AB123456AB"</Data>
+					<Data param="DataType">ASCII</Data>
+					<Requirements />
+				</TestCase>
+			</TestCases>
+		</TestClass>
+    </TestSuite>
+	<TestSuite class="suites.Ping" testtype="QuickTest" uniqueSuffix="BK178x_Ping">
+        <Data param="current">3</Data>
+        <Data param="delay_sec">1</Data>
+		<TestClass class="test_uds.WriteDataByIdentifier" testtype="QuickTest ManualTest" uniqueSuffix="IdentData2">
+			<ClassData>
+				<Data name="themes">Diag</Data>
+			</ClassData>
+			<ClassVariable>
+				<Data param="OutputFile">output\\identdata222222.log</Data>
+			</ClassVariable>
+			<TestCases>
+				<TestCase id="0xF185_VWHUNumber">
+					<Data param="Label">VWHUNumber</Data>
+					<Data param="DID">0xF185</Data>
+					<Data param="ExpectedData">"1AB123456AA"</Data>
+					<Data param="DataType">ASCII</Data>
+					<Requirements />
+				</TestCase>
+			</TestCases>
+		</TestClass>
+    </TestSuite>
+	<TestSuite class="suites.Pong" testtype="FastTest" uniqueSuffix="BK178x_Pong">
+        <Data param="current">6000</Data>
+        <Data param="delay_sec">2000</Data>
+		<Data param="user_time">2000</Data>
+		<TestSuite class="suites.Pong2" testtype="FastTest2" uniqueSuffix="BK178x_Pong2">
+			<Data param="current">8000</Data>
+			<Data param="delay_sec">5000</Data>
+			<Data param="user_time">5000</Data>
+			<TestClass class="test_tcp.GetPong" testtype="FastTest ManualTest" uniqueSuffix="IdentData3">
+				<ClassData>
+					<Data name="themes">Diag</Data>
+				</ClassData>
+				<ClassVariable>
+					<Data param="OutputFile">output\\identdata33333333.log</Data>
+				</ClassVariable>
+				<TestCases>
+					<TestCase id="0xF181_PongTest">
+						<Data param="Label">Pong123</Data>
+						<Data param="DID">0xF181</Data>
+						<Data param="ExpectedData">"1AB123456AB"</Data>
+						<Data param="DataType">ASCII</Data>
+						<Requirements />
+					</TestCase>
+					<TestCase id="0xF181_PongTest">
+						<Data param="Label">Pong123</Data>
+						<Data param="DID">0xF181</Data>
+						<Data param="ExpectedData">"1AB123456AB"</Data>
+						<Data param="DataType">ASCII</Data>
+						<Requirements />
+					</TestCase>
+				</TestCases>
+			</TestClass>
+		</TestSuite>
+    </TestSuite>
+</TestSuites>

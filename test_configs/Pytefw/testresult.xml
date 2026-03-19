@@ -1,0 +1,15 @@
+<EcuTest>
+        <MasterData>
+            <Ecu ecu="" hw="1.0" sw="1.0" />
+            <TestDate date="2019-08-19 at 14:16" />
+            <Project>Test_Bench_A</Project>
+            <Tester>reko8680</Tester>
+        </MasterData>
+        <TestClass id="suites.Void/test_example.CompareNumerals">
+            <TestCases>
+                <Test id="00001">
+                    <Result result="successful" />
+                </Test>
+            </TestCases>
+        </TestClass>
+    </EcuTest>
